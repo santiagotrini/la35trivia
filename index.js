@@ -24,6 +24,8 @@ app.use(express.json());
 // auth
 require('./config/passport')();
 app.use(passport.initialize());
+// serve frontend
+app.use(express.static('public'));
 // routers
 app.use('/', require('./routes/user'));
 app.use('/', require('./routes/quiz'));
