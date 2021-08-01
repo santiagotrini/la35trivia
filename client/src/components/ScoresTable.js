@@ -20,18 +20,23 @@ const ScoresTable = props => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>ID Trivia</th>
-            <th>ID Usuario</th>
+            <th>Trivia</th>
+            <th>Usuario</th>
             <th>Puntaje</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           {scores.map(score => (
             <tr key={score._id}>
               <td>{score._id}</td>
-              <td>{score.quiz}</td>
-              <td>{score.user}</td>
+              <td>{score.quiz.title}</td>
+              <td>{score.user.username}</td>
               <td>{score.score}</td>
+              <td>
+                <button>Editar</button>
+                <button>Borrar</button>
+              </td>
             </tr>
           ))}
         </tbody>

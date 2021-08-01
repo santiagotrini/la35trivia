@@ -45,6 +45,22 @@ const Dashboard = props => {
       })
       .catch(err => console.log(err));
   }, []);
+  // fetch scores for user
+  const [userScores, setUserScores] = useState([]);
+  useEffect(() => {
+    console.log('FETCHING USER SCORES', user._id);
+    axios.get('/api/scores/' + user._id, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      }
+    })
+      .then(res => {
+        console.log('USER SCORES');
+        console.log(res.data);
+        setUserScores(res.data);
+      })
+      .catch(err => console.log(err));
+  }, [user._id]);
 
   // helpers
   const addQuiz = quiz => {
@@ -64,7 +80,7 @@ const Dashboard = props => {
     <div className="Dashboard">
       <Sidebar user={user} setShow={setShow} />
       {show === 'play' && <Play quizzes={quizzes} />}
-      {show === 'profile' && <Profile user={user} />}
+      {show === 'profile' && <Profile userScores={userScores} user={user} />}
       {show === 'new' && <AddQuiz addQuiz={addQuiz} />}
       {show === 'users' && <UsersTable />}
       {show === 'quizzes' && <QuizzesTable quizzes={quizzes} />}

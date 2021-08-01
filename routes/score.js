@@ -11,5 +11,10 @@ router
   .route('/api/scores')
   .get(passport.authenticate('jwt', { session: false }), controller.all)
   .post(passport.authenticate('jwt', { session: false }), controller.create);
+
+router
+  .route('/api/scores/:user')
+  .get(passport.authenticate('jwt', { session: false }),
+       controller.userScores);  
 // export
 module.exports = router;

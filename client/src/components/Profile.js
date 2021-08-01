@@ -1,5 +1,5 @@
 const Profile = props => {
-  const { user } = props;
+  const { user, userScores } = props;
   const { username, firstName, lastName, role } = user;
   // render
   return (
@@ -10,6 +10,9 @@ const Profile = props => {
       <p>Rol: {role}</p>
       <hr/>
       <h3>Puntajes:</h3>
+      {userScores.map(score => (
+        <p key={score._id}>{score.quiz.title}: {score.score}</p>
+      ))}
     </div>
   );
 };

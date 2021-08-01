@@ -2,8 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ScoreSchema = new Schema({
-  user: Schema.Types.ObjectId,
-  quiz: Schema.Types.ObjectId,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  quiz: {
+    type: Schema.Types.ObjectId,
+    ref: 'Quiz'
+  },
   score: Number
 });
 
