@@ -14,7 +14,7 @@ const Sidebar = props => {
       {
         user.role === 'admin' &&
         <>
-          <h3>Admin</h3>
+          <h4>Administración</h4>
           <button onClick={() => setShow('users')}>Usuarios</button>
           <button onClick={() => setShow('quizzes')}>Trivias</button>
           <button onClick={() => setShow('scores')}>Puntajes</button>

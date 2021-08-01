@@ -4,10 +4,11 @@ const Profile = props => {
   // render
   return (
     <div className="Profile">
-      <h2>Profile</h2>
-      <h4>{username}</h4>
-      <p>{firstName} {lastName}</p>
-      <p>{role}</p>
+      <h2>Perfil</h2>
+      <h3>{username}</h3>
+      <p>Nombre y apellido: {firstName} {lastName}</p>
+      <p>Rol: {role}</p>
+      <hr/>
       <h3>Puntajes:</h3>
     </div>
   );

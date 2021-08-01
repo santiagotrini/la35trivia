@@ -29,7 +29,7 @@ const Register = props => {
   // render
   return (
     <div className="Register">
-      <h1>Register</h1>
+      <h1>Registrarse</h1>
       <form onSubmit={handleSubmit}>
         <label>Usuario</label>
         <input

@@ -90,6 +90,7 @@ const AddQuiz = props => {
           <label>Pregunta</label>
           <textarea
             name="description"
+            rows="6"
             value={description}
             onChange={handleChange}
           />
@@ -133,34 +134,42 @@ const AddQuiz = props => {
           <p>Respuesta correcta</p>
 
           <div className="Answers">
-            <label>A</label>
-            <input
-              value={0}
-              onChange={handleChange}
-              type="radio"
-              name="correctAnswer"
-            />
-            <label>B</label>
-            <input
-              value={1}
-              onChange={handleChange}
-              type="radio"
-              name="correctAnswer"
-            />
-            <label>C</label>
-            <input
-              value={2}
-              onChange={handleChange}
-              type="radio"
-              name="correctAnswer"
-            />
-            <label>D</label>
-            <input
-              value={3}
-              onChange={handleChange}
-              type="radio"
-              name="correctAnswer"
-            />
+            <div>
+              <input
+                value={0}
+                onChange={handleChange}
+                type="radio"
+                name="correctAnswer"
+              />
+              <label>A</label>
+            </div>
+            <div>
+              <input
+                value={1}
+                onChange={handleChange}
+                type="radio"
+                name="correctAnswer"
+              />
+              <label>B</label>
+            </div>
+            <div>
+              <input
+                value={2}
+                onChange={handleChange}
+                type="radio"
+                name="correctAnswer"
+              />
+              <label>C</label>
+            </div>
+            <div>
+              <input
+                value={3}
+                onChange={handleChange}
+                type="radio"
+                name="correctAnswer"
+              />
+              <label>D</label>
+            </div>
           </div>
 
         </div>
@@ -169,7 +178,7 @@ const AddQuiz = props => {
 
         <button onClick={handleClick} type="button">Agregar pregunta</button>
 
-        <button type="submit">Guardar trivia</button>
+        <button className="primary" type="submit">Guardar trivia</button>
 
       </form>
     </div>

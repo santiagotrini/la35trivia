@@ -43,8 +43,8 @@ const Quiz = props => {
   // FIXME: No funciona el boton de jugar en la sidebar al terminar
   return (
     <div className="Quiz">
-      <h3>{title}</h3>
-      {number < questions.length && <div className="Question">
+      <h3>Trivia: {title}</h3>
+      {number < questions.length && <div className="QuizQuestion">
         <p>{questions[number].description}</p>
         <form>
           {questions[number].options.map(
@@ -59,8 +59,7 @@ const Quiz = props => {
             ))}
           </form>
       </div>}
-      {number === questions.length && <div>
-        <h3>Fin</h3>
+      {number === questions.length && <div className="QuizFinished">
         <p>Puntaje: {score}</p>
         <Link to="/dashboard">Volver</Link>
       </div>}

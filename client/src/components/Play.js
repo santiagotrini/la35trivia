@@ -11,7 +11,6 @@ const Play = props => {
   // render
   return (
     <div className="Play">
-      <h2>Jugar</h2>
       {!playing &&
         <div className="QuizList">
           {quizzes.map(quiz => (

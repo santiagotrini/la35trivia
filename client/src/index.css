@@ -1,3 +1,5 @@
+/* CRA default styles */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,64 +9,123 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-textarea {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1rem;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* App component */
+/* Global */
 
-/* Header */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+form > * {
+  margin: 5px 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+td > button {
+  margin: 0 10px;
+  font-size: 16px;
+  color: firebrick;
+  background: transparent;
+  border: 2px solid firebrick;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+td > button:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Classes */
+
+.App {
+  border: 1px solid black;
+  min-width: 320px;
+  max-width: 1366px;
+  min-height: 500px;
+  margin: 5px auto;
+}
 
 .Header {
   border: 1px solid black;
   margin: 3px 3px;
-  text-align: center;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.Header h2 {
-  padding: 0 10px;
+.Header h3 {
+  margin-left: 10px;
 }
 
-/* Navbar */
+.Header p {
+  color: firebrick;
+}
 
 .Navbar {
-  border: 1px solid black;
-  margin: 3px 3px;
   width: 50%;
+}
+
+.Navbar button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+.Navbar button:hover {
+  text-decoration: underline;
 }
 
 .Navbar ul {
   list-style-type: none;
-  padding: 3px 3px;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
-
-
-/* Main */
 
 .Main {
   border: 1px solid black;
   margin: 3px 3px;
-  text-align: center;
-  padding: 5px 5px;
+  min-height: 400px;
 }
-
-
-/* Footer */
 
 .Footer {
   border: 1px solid black;
@@ -72,114 +133,124 @@ code {
   text-align: center;
 }
 
-/* Landing */
-
 .Landing {
-  text-align: left;
-  width: 30%;
+  padding: 50px;
+  width: 40%;
+}
+
+.Landing a.primary {
+  margin-right: 5px;
+  border: 2px solid firebrick;
+  color: white;
+  background: firebrick;
+  border-radius: 5px;
+  padding: 5px 15px;
 }
 
 .Landing a {
-  border: 1px solid black;
-  padding: 10px 10px;
-  display: inline-block;
-  margin-right: 10px;
-  box-shadow: 2px 2px gray;
-  margin-bottom: 30px;
+  margin-right: 5px;
+  border: 2px solid firebrick;
+  color: firebrick;
+  border-radius: 5px;
+  padding: 5px 15px;
 }
 
-/* Dashboard */
+.Landing a:hover {
+  opacity: 0.8;
+}
+
+.Register h1 {
+  text-align: center;
+}
+
+.Login h1 {
+  text-align: center;
+}
+
+.Register button, .Login button {
+  border: 2px solid firebrick;
+  font-size: 16px;
+  color: white;
+  background: firebrick;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.Register button:hover, .Login button:hover {
+  opacity: 0.8;
+}
 
 .Dashboard {
   display: flex;
-  justify-content: flex-start;
-  height: 800px;
 }
-
-/* Sidebar */
 
 .Sidebar {
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  border: 1px solid black;
-  padding: 0 10px;
-}
-
-.Sidebar button {
-  border: 1px solid black;
-  box-shadow: 2px 2px gray;
-  margin: 3px 3px;
-  background: white;
-  font-size: 1rem;
-  padding: 4px 8px;
-}
-
-.AddQuiz {
-  margin: 0 100px;
-}
-
-.AddQuiz label {
-  display: block;
+  margin: 5px;
+  padding: 10px;
   text-align: left;
 }
 
-.AddQuiz button {
-  display: block;
-  margin: 5px auto;
-  width: 80%;
+.Sidebar > * {
+  margin: 3px 0;
 }
 
-.Answers {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.Profile {
-  margin: 0 auto;
-}
-
-.Play {
-  margin: 0 auto;
-}
-
-.UsersTable {
-  margin: 0 auto;
-}
-
-.QuizzesTable {
-  margin: 0 auto;
-}
-
-.ScoresTable {
-  margin: 0 auto;
-}
-
-.QuizList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.QuizCard {
-  margin: 10px;
-  border: 1px solid black;
-  width: 150px;
-  box-shadow: 2px 2px gray;
-}
-
-.QuizCard button {
-  /* margin: 30px 0px;  */
-  border: 1px solid black;
+.Sidebar button {
+  text-align: left;
+  margin-right: 5px;
+  border: none;
+  color: firebrick;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px 15px;
   background: transparent;
-  box-shadow: 2px 2px gray;
-  padding: 5px 5px;
+  outline: none;
 }
 
-.Play button {
-  display: block;
-  margin: 5px auto;
-  width: 80%;
+.Sidebar h4 {
+  color: gray;
+}
+
+.Sidebar h2 {
+  text-align: left;
+}
+
+.Sidebar button:hover {
+  text-decoration: underline;
+}
+
+.AddQuiz {
+  /* margin-left: 50px; */
+  margin: 0 auto;
+}
+
+.AddQuiz button.primary {
+  border: 2px solid firebrick;
+  font-size: 16px;
+  color: white;
+  background: firebrick;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.AddQuiz button {
+  border: 2px solid firebrick;
+  font-size: 16px;
+  color: firebrick;
+  background: transparent;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.AddQuiz button:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.AddQuiz > form > * {
+  margin-top: 5px;
 }
 
 .Question {
@@ -187,72 +258,115 @@ code {
   flex-direction: column;
 }
 
-.Question p {
-  border: 1px solid black;
-  box-shadow: 2px 2px gray;
-  padding: 30px 150px;
+.Question > * {
+  margin-top: 5px;
 }
 
-.Question form {
+.Answers {
   display: flex;
+  flex-direction: column;
+}
+
+.AddQuiz p {
+  margin: 10px 0;
+}
+
+.Answers label {
+  margin-left: 5px;
+}
+
+.Profile {
+  padding: 20px;
+  min-width: 70%;
+  margin: 0 auto;
+}
+
+.Profile h2 {
+  text-align: left;
+}
+
+.Play {
+  margin: 0 auto;
+  min-width: 80%;
+}
+
+.QuizList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto; /* no funciona, que onda? */
+
+}
+
+.QuizCard {
+  border: 1px solid gray;
+  box-shadow: 2px 2px gray;
+  margin: 5px;
+  padding: 15px 30px;
+  width: 250px;
+}
+
+.QuizCard button {
+  border: 2px solid firebrick;
+  font-size: 16px;
+  color: white;
+  background: firebrick;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.QuizCard button:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.QuizQuestion p {
+  border: 1px solid black;
+  width: 80%;
+  margin: 5px auto;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 2px 2px gray;
+}
+
+.QuizQuestion form {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.Question form button {
-  width: 40%;
-  padding: 20px 80px;
+.QuizQuestion > form > button {
   border: 1px solid black;
+  width: 45%;
+  margin: 10px 0;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
   box-shadow: 2px 2px gray;
+  background: firebrick;
+  outline: none;
 }
 
-.Login {
-  margin: 0 auto;
-  width: 300px;
+.QuizQuestion > form > button:hover {
+  opacity: 0.8;
 }
 
-.Login input {
-  width: 90%
-}
-
-.Login label {
-  display: block;
-  text-align: left;
-}
-
-.Login button {
-  display: block;
-  margin: 5px auto;
-  width: 100%;
-}
-
-.Register {
-  margin: 0 auto;
-  width: 300px;
-}
-
-.Register input {
-  width: 90%
-}
-
-.Register label {
-  display: block;
-  text-align: left;
-}
-
-.Register button {
-  display: block;
-  margin: 5px auto;
-  width: 100%;
-}
-
-table, tr, td, th {
-  text-align: center;
+.QuizFinished {
   border: 1px solid black;
-  border-collapse: collapse;
-  margin: 10px 10px;
+  padding: 20px;
 }
 
-td, th {
-  padding: 5px 5px;
+.QuizFinished > p {
+  font-size: 20px;
+}
+
+.QuizFinished > a {
+  font-size: 20px;
+}
+
+.Quiz {
+  text-align: center;
 }
