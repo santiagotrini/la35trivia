@@ -3,7 +3,6 @@ const UsersTableRow = props => {
   const { user, updateUser, deleteUser } = props;
   // handlers
   const handleClick = e => {
-    console.log('Editar usuario');
     // uso prompt para resolver rapido (mejorar esto)
     const firstName = prompt('Nombre?') || user.firstName;
     const lastName = prompt('Apellido?') || user.lastName;

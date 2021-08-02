@@ -11,8 +11,6 @@ const Quiz = props => {
   const [score, setScore] = useState(0);
   // handlers
   const handleClick = e => {
-    console.log(questions[number]);
-    console.log('index: ', parseInt(e.target.id));
     const choice = parseInt(e.target.id);
     setNumber(prev => prev += 1);
     // update score
@@ -22,10 +20,6 @@ const Quiz = props => {
   // post score when finished
   useEffect(() => {
     if (number === questions.length) {
-      console.log('DEBUG');
-      console.log('USER ID' , quiz._id);
-      console.log('Pregunta: ', number);
-      console.log('Score: ', score);
       const data = {
         quiz: quiz._id,
         score
@@ -35,8 +29,7 @@ const Quiz = props => {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
       })
-        .then(res => console.log(res.data))
-        .catch(err => console.log(err));
+        .then(res => null);
     }
   })
   // render

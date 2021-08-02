@@ -9,8 +9,7 @@ const ScoresTable = props => {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => setScores(res.data))
-      .catch(err => console.log(err));
+      .then(res => setScores(res.data));
   }, []);
   // render
   return (

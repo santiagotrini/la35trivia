@@ -23,8 +23,6 @@ exports.one = (req, res, next) => {
 };
 // GET /api/users/me
 exports.me = (req, res, next) => {
-  console.log(req.user);
-  console.log('DEBUG in /api/users/me');
   res.status(200).json(req.user);
 };
 // POST /api/users
@@ -46,12 +44,10 @@ exports.create = (req, res, next) => {
 };
 // POST /api/users/login
 exports.login = (req, res, next) => {
-  console.log(req.user); // debug
   const { _id, username, role } = req.user; // destructure
   const user = { _id, username, role }; // token payload
   // sign token
   const token = jwt.sign({ user }, process.env.JWT_SECRET || 'I am Groot');
-  console.log(token); // debug
   res.status(200).json({ token });
 };
 // DELETE /api/users/:id

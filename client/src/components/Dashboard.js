@@ -16,20 +16,13 @@ const Dashboard = props => {
   const [quizzes, setQuizzes] = useState([]);
   // fetch user profile
   useEffect(() => {
-    console.log('Fetch profile...');
     axios.get('/api/users/me', {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log(res.data);
-        setUser(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-        setUser(false);
-      });
+      .then(res => setUser(res.data))
+      .catch(err => setUser(false));
 
   }, [setUser]);
   // fetch data
@@ -39,27 +32,17 @@ const Dashboard = props => {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log(res.data);
-        setQuizzes(res.data);
-      })
-      .catch(err => console.log(err));
+      .then(res => setQuizzes(res.data));
   }, []);
   // fetch scores for user
   const [userScores, setUserScores] = useState([]);
   useEffect(() => {
-    console.log('FETCHING USER SCORES', user._id);
     axios.get('/api/scores/' + user._id, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log('USER SCORES');
-        console.log(res.data);
-        setUserScores(res.data);
-      })
-      .catch(err => console.log(err));
+      .then(res => setUserScores(res.data));
   }, [user._id]);
 
   // helpers
@@ -69,11 +52,7 @@ const Dashboard = props => {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log(res.data);
-        setQuizzes([ ...quizzes, res.data ]);
-      })
-      .catch(err => console.log(err));
+      .then(res => setQuizzes([ ...quizzes, res.data ]));
   };
   // render
   return (

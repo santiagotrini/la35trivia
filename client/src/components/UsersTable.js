@@ -13,41 +13,29 @@ const UsersTable = props => {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log(res.data);
-        setUsers(res.data);
-      })
-      .catch(err => console.log(err));
+      .then(res => setUsers(res.data));
   }, []);
   // helpers
   const deleteUser = id => {
-    console.log('borrando ', id);
     axios.delete('/api/users/' + id, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
-      .then(res => {
-        console.log(res.data);
-        setUsers(users.filter(user => user._id !== id))
-      })
-      .catch(err => console.log(err));
+      .then(res => setUsers(users.filter(user => user._id !== id)));
   };
   const updateUser = (id, data) => {
-    console.log(id, data);
     axios.put('/api/users/' + id, data, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     })
       .then(res => {
-        console.log(res.data);
         const newUsers = users.map(user =>
           user._id === id ? res.data : user
         );
         setUsers(newUsers);
-      })
-      .catch(err => console.log(err));
+      });
   };
   // render
   return (

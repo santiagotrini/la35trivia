@@ -13,13 +13,11 @@ const Register = props => {
     // API call
     axios.post('/api/users', user)
       .then(res => {
-        console.log(res.data);
         // blank form
         setUser({
           username: '', password: '', firstName: '', lastName: ''
         });
-      })
-      .catch(err => console.log(err));
+      });
   };
   const handleChange = e => {
     const name = e.target.name;

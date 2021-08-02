@@ -5,7 +5,6 @@ import Quiz from './Quiz';
 
 const Play = props => {
   const { quizzes } = props;
-  console.log(quizzes);
   // state
   const [playing, setPlaying] = useState(false)
   // render

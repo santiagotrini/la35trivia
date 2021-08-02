@@ -13,11 +13,9 @@ const Login = props => {
   // handlers
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(credentials);
     // call API and get JWT
     axios.post('/api/users/login', credentials)
       .then(res => {
-        console.log(res.data.token);
         localStorage.setItem('token', res.data.token);
         // blank form
         setCredentials({
@@ -25,8 +23,7 @@ const Login = props => {
         });
         // go to home
         history.push('/dashboard');
-      })
-      .catch(err => console.log(err))
+      });
   };
   const handleChange = e => {
     const name = e.target.name;
