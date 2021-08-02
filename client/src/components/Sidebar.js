@@ -4,7 +4,6 @@ const Sidebar = props => {
   // render
   return (
     <div className="Sidebar">
-      <h2>Sidebar</h2>
       <button onClick={() => setShow('play')}>Jugar</button>
       <button onClick={() => setShow('profile')}>Perfil</button>
       {
@@ -14,7 +13,6 @@ const Sidebar = props => {
       {
         user.role === 'admin' &&
         <>
-          <h4>Administración</h4>
           <button onClick={() => setShow('users')}>Usuarios</button>
           <button onClick={() => setShow('quizzes')}>Trivias</button>
           <button onClick={() => setShow('scores')}>Puntajes</button>

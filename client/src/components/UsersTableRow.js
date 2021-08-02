@@ -20,6 +20,8 @@ const UsersTableRow = props => {
       <td>{user.role}</td>
       <td>
         <button onClick={handleClick}>Editar</button>
+      </td>
+      <td>
         <button onClick={() => deleteUser(user._id)}>Borrar</button>
       </td>
     </tr>

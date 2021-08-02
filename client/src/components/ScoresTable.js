@@ -14,7 +14,7 @@ const ScoresTable = props => {
   // render
   return (
     <div className="ScoresTable">
-      <h2>ScoresTable</h2>
+      <h2>Puntajes</h2>
       <table>
         <thead>
           <tr>
@@ -22,7 +22,7 @@ const ScoresTable = props => {
             <th>Trivia</th>
             <th>Usuario</th>
             <th>Puntaje</th>
-            <th>Acciones</th>
+            <th colspan="2">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +34,8 @@ const ScoresTable = props => {
               <td>{score.score}</td>
               <td>
                 <button>Editar</button>
+              </td>
+              <td>
                 <button>Borrar</button>
               </td>
             </tr>

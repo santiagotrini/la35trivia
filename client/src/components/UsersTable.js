@@ -40,7 +40,7 @@ const UsersTable = props => {
   // render
   return (
     <div className="UsersTable">
-      <h2>UsersTable</h2>
+      <h2>Usuarios</h2>
       <table>
         <thead>
           <tr>
@@ -49,7 +49,7 @@ const UsersTable = props => {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Rol</th>
-            <th>Acciones</th>
+            <th colspan="2">Acciones</th>
           </tr>
         </thead>
         <tbody>

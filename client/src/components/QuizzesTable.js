@@ -3,7 +3,7 @@ const QuizzesTable = props => {
   // render
   return (
     <div className="QuizzesTable">
-      <h2>QuizzesTable</h2>
+      <h2>Trivias</h2>
       <table>
         <thead>
           <tr>
@@ -12,7 +12,7 @@ const QuizzesTable = props => {
             <th>Materia</th>
             <th>Tema</th>
             <th>Preguntas</th>
-            <th>Acciones</th>
+            <th colspan="2">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +25,8 @@ const QuizzesTable = props => {
               <td>{quiz.questions.length}</td>
               <td>
                 <button>Editar</button>
+              </td>
+              <td>
                 <button>Borrar</button>
               </td>
             </tr>
